@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberapt</title>
+    <style>
+        @font-face {
+            font-family: 'Bookman Old Style';
+            src: local('Bookman Old Style'), local('BookmanOldStyle'),
+             url('https://fonts.cdnfonts.com/s/13459/Bookman%20Old%20Style.woff')
+              format('woff');
+        }
+
+        body {
+            font-family: 'Bookman Old Style', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+        }
+
+        .logo {
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo .logo-text {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+
+        .logo .logo-text .cursor {
+            display: inline-block;
+            width: 3mm;
+            height: 24px;
+            background-color: red;
+            margin-left: 5px;
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            50% { opacity: 0 }
+        }
+
+        .logo .logo-text span {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 4s steps(8) forwards;
+        }
+
+        .nav-menu {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        li {
+            display: inline;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            padding: 8px 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: #ff9800;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .section-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .section-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Media Queries for Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-menu {
+                width: 100%;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+
+            ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-item {
+                width: 100%;
+                text-align: left;
+                padding: 10px 20px;
+            }
+
+            .logo {
+                justify-content: center;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .logo img {
+                height: 50px;
+                width: 50px;
+            }
+
+            .logo .logo-text {
+                font-size: 20px;
+                margin-left: 5px;
+            }
+
+            .logo .logo-text .cursor {
+                height: 20px;
+            }
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo 1.jpg" alt="Logo">
+            <div class="logo-text">
+                <span>Cyberapt</span>
+                <div class="cursor"></div>
+            </div>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="#" class="nav-item" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" class="nav-item" onclick="showPage('cyber-news')">Cybersecurity Free Courses</a></li>
+                <li><a href="#" class="nav-item" onclick="showPage('it-news')">IT</a></li>
+                <li><a href="#" class="nav-item" onclick="showPage('technology')">Technology</a></li>
+                <li><a href="#" class="nav-item" onclick="showPage('international-news')"> Latest Updates</a></li>
+                <li><a href="#" class="nav-item" onclick="showPage('about')">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section id="home" class="content active">
+            <h1 align="center" class="section-title">Welcome to the space of Cybersecurity</h1>
+            <div class="section-content">
+                <p>Cybersecurity is the shield of our digital world, safeguarding
+                     systems, networks, and data from cyber threats. It's not just about
+                      technology, but also people and processes. As cyber threats evolve, 
+                      so must our defenses, requiring a proactive approach. In our interconnected
+                       world, cybersecurity is a shared responsibility,
+                     and our collective security depends on each of us doing our part.</p><br><br>
+            </div><br><br><br><br>
+
+
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <script src="https://cdn.tailwindcss.com"></script>
+            </head>
+            <style>
+              h1 {
+                  font-size: 40px; /* Adjust the font size as desired */
+                  text-align: center;
+              }
+          </style>
+          </head>
+          <body>
+          <h1>Data Leaks</h1>
+          </body>
+            <body>
+              <div class="flex flex-col md:flex-row items-center justify-center p-6">
+            <div class="relative w-64 h-64 md:w-80 md:h-80">
+              <img src="hacked.jpeg" alt="Open Shop" class="absolute inset-0 w-full h-full object-cover rounded-full" />
+              <div class="absolute inset-0 w-full h-full bg-black opacity-50 rounded-full"></div>
+              <div class="absolute inset-0 w-full h-full bg-pattern bg-cover rounded-full"></div>
+            </div>
+            <div class="mt-6 md:mt-0 md:ml-10 text-center md:text-left">
+            
+              <p>In the past five years, there have been several major data breaches that have affected millions of people. Some notable incidents include:<br><br>
+                <p><b>1. Equifax breach</b>: This breach exposed sensitive information of millions of individuals, including Social Security numbers and other personal data.</p><br>
+                <p><b>2. Yahoo data breach</b>: In 2013, Yahoo suffered a massive breach that impacted 3 billion user accounts.</p><br>
+                <p><b>3. Adobe customer data breach</b>: Adobe experienced a breach that affected a significant number of users.</p><br>
+                <p><b>4. Marriott International data breach</b>: Marriott's breach exposed personal details of millions of guests.</p><br>
+                <p><b>5. LinkedIn breach</b>: LinkedIn faced a breach that compromised user credentials.</p><br>
+                
+              </p>
+            </div>
+          </div>
+          <style>
+            .bg-pattern {
+              background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/wood_pattern.png');
+            }
+          </style>
+            </body><br><br>
+
+
+            <style>
+              h1 {
+                  font-size: 40px; /* Adjust the font size as desired */
+                  text-align: center;
+              }
+          </style>
+          </head>
+          <body>
+          <h1>Why we need to be secure?</h1>
+          </body>
+            <body>
+            <div class="mt-6 md:mt-0 md:ml-10 text-center md:text-left">
+            
+              <p>Ensuring security is crucial for several reasons:<br>
+
+              <p><b>1.   Protecting Personal Information</b> :
+                   - Security measures safeguard our personal data, such as financial records, health information, and login credentials.
+                   - Without security, this sensitive information could be exposed, leading to identity theft, fraud, or other malicious activities.</p><br>
+                
+              <p><b>2.   Business Continuity</b> :
+                   - Organizations rely on secure systems to operate efficiently.
+                   - Breaches can disrupt services, cause financial losses, and damage reputation.
+                   - Ensuring security helps maintain business continuity.</p><br>
+                
+               <p><b>3.   Preventing Cyber Attacks</b> :
+                   - Cybercriminals constantly target vulnerable systems.
+                   - Security practices help prevent unauthorized access, malware infections, and data breaches.</p><br>
+                
+              <p><b>4.   Compliance and Legal Requirements</b> :
+                   - Many industries have regulations (e.g., GDPR, HIPAA) that mandate security practices.
+                   - Non-compliance can result in fines or legal consequences.</p><br>
+                
+              <p><b>5.   Preserving Privacy</b> :
+                   - Security protects our privacy by limiting access to personal information.
+                   - Privacy breaches erode trust and violate individuals' rights.</p><br>
+                
+              <p><b>6.   National Security</b> :
+                   - Secure systems are essential for a nation's defense, infrastructure, and communication.
+                   - Cybersecurity threats can impact national security.</p><br>
+              
+
+            </div>
+          </div>
+            </body><br><br><br><br>
+            
+            <head>
+                <style>
+                    h1 {
+                        font-size: 40px;
+                        text-align: center;
+                    }
+                    img {
+                        display: block;
+                        margin: 0 auto; /* Center the image horizontally */
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Types of Hackers</h1><br><br>
+                <img src="types of hacker.webp" height="450" width="900">
+            </body><br><br><br><br><br><br>
+           
+            
+  <body>
+  
+    <div class="mt-6 md:mt-0 md:mr-10 text-center md:text-left">
+      <h2 class="text-2xl font-bold">Roles of Ethical hacking in Cybersecurity</h2><br><br>
+    
+  
+        <p><b>1. Risk Assessment and Testing</b>:
+           - Ethical hackers play a critical role in identifying 
+           vulnerabilities within systems. They assess risks by simulating attacks,
+            probing for weaknesses, and evaluating potential threats. By doing so, they help organizations 
+           understand their security posture and recommend proactive improvements.</p><br>
+        
+           <p><b>2. Compliance and Awareness</b>:
+           - Ethical hackers ensure compliance with security standards and 
+           regulations. They verify that systems meet industry requirements
+            and protect sensitive data. Additionally, they educate employees about 
+            security best practices, raising awareness and empowering individuals to 
+            recognize and prevent cyber threats. 🛡️</p><br></p>
+    </div>
+  </div>
+  </body><br><br><br><br>
+
+
+  
+  
+
+
+    <head><meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+      <br><br>
+   
+      <style>
+          h1 {
+              font-size: 40px; /* Adjust the font size as desired */
+              text-align: center;
+          }
+      </style>
+  </head>
+  <body>
+      <h1>Hackers best Operating System</h1>
+  </body>
+  
+      <div class="flex flex-wrap justify-center">
+    
+    <div class="max-w-sm rounded overflow-hidden shadow-lg m-4 bg-white dark:bg-zinc-800">
+      <img class="w-full" src="kali linux image.png" alt="Kali Linux Image">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2 dark:text-white">Kali Linux</div>
+      </div>
+    </div>
+    
+    <div class="max-w-sm rounded overflow-hidden shadow-lg m-4 bg-white dark:bg-zinc-800">
+      <img class="w-full" src="parrot os image.jpg" alt="Parrot OS Image">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2 dark:text-white">Parrot OS</div>
+       
+      </div>
+    </div>
+    
+    <div class="max-w-sm rounded overflow-hidden shadow-lg m-4 bg-white dark:bg-zinc-800">
+      <img class="w-full" src="backbox os image.png" alt="BlackArch Linux Image">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2 dark:text-white">BackBox Os</div>
+      </div>
+    </div>
+  </div>
+  </body>
+  <br><br><br><br>
+  
+
+   
+            <section id="home" class="content active">
+                <h1 align="center" class="section-title">Free Videos to enhance your career in Cybersecurity</h1></section>
+            <div class="bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 p-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div class="bg-black dark:bg-white p-4 rounded-lg cursor-pointer" onclick="playVideo('https://www.youtube.com/watch?v=vK4Mno4QYqk')">
+                    <img src="cybersecurityroadmap.png" height="600" width="400" alt="Video Thumbnail 1" class="rounded-lg mb-4">
+                    <h2 class="text-xl font-bold mb-2">How to become Cybersecurity Expert</h2>
+                    <p class="text-sm">This video will help you how to be a Professional Cybersecurity Expert.</p>
+                  </div>
+                  <div class="bg-black dark:bg-white p-4 rounded-lg cursor-pointer" onclick="playVideo('https://www.youtube.com/watch?v=Rgvzt0D8bR4&t=1578s')">
+                    <img src="ethicalhacking.png" height="900" width="400" alt="Video Thumbnail 2" class="rounded-lg mb-4">
+                    <h2 class="text-xl font-bold mb-2">Ethical Hacking full course / Complete Course</h2>
+                    <p class="text-sm">This video helps you to enter in the world of Cybersecurity with Ethical Hacking.</p>
+                  </div>
+                  <div class="bg-black dark:bg-white p-4 rounded-lg cursor-pointer" onclick="playVideo('https://www.youtube.com/watch?v=J8odohybOIM&t=3547s')">
+                    <img src="linuxcourse.png" height="600" width="400" alt="Video Thumbnail 3" class="rounded-lg mb-4">
+                    <h2 class="text-xl font-bold mb-2">LINUX Complete tutorial</h2>
+                    <p class="text-sm">This video helps you to be Master in LINUX Operating System.</p>
+                  </div>
+                </div>
+              </div>
+              <script>
+                function playVideo(url) {
+                  window.open(url, '_blank');
+                }
+              </script>
+                <html>
+       
+                <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <script src="https://cdn.tailwindcss.com"></script>
+                </head>
+                <body>
+                  <div class="max-w-2xl mx-auto p-4">
+                <div class="text-center mb-6">
+                  <img aria-hidden="true" alt="organization logo" src="logo 1.jpg" height="35" width="70" class="mx-auto mb-2">
+                  <h1 class="text-2xl font-semibold text-orange-500">Cyberapt</h1>
+                </div>
+                <div class="bg-orange-100 p-4 rounded-md mb-6">
+                  <h2 class="text-xl font-semibold text-center text-zinc-800">Get in touch with our organization</h2>
+                </div>
+                <form class="space-y-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label for="first-name" class="block text-sm font-medium text-zinc-700">First Name</label>
+                      <input type="text" id="firstname" name="firstname" placeholder="First Name" class="mt-1 block w-full border-zinc-300 rounded-md shadow-sm focus:border-orange-500 focus:ring-orange-500">
+                    </div>
+                    <div>
+                      <label for="last-name" class="block text-sm font-medium text-zinc-700">Last Name</label>
+                      <input type="text" id="lastname" name="lastname" placeholder="Last Name" class="mt-1 block w-full border-zinc-300 rounded-md shadow-sm focus:border-orange-500 focus:ring-orange-500">
+                    </div>
+                  </div>
+                  <div>
+                    <label for="E-mail" class="block text-sm font-medium text-zinc-700">E-mail</label>
+                    <input type="text" id="E-mail" name="Email" placeholder="E-mail" class="mt-1 block w-full border-zinc-300 rounded-md shadow-sm focus:border-orange-500 focus:ring-orange-500">
+                  </div>
+                  <div>
+                    <label for="Address" class="block text-sm font-medium text-zinc-700">Address</label>
+                    <input type="text" id="Address" name="Address" placeholder="Address" class="mt-1 block w-full border-zinc-300 rounded-md shadow-sm focus:border-orange-500 focus:ring-orange-500">
+                  </div>
+                  <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">Submit</button>
+                </form>
+              </div>
+                </body>
+              </html>
+        </section>
+        <section id="cyber-news" class="content">
+            <h1 align="center" class="section-title">Free Courses to enhance your career in Cybersecurity</h1>
+            <div class="section-content">
+                <p>Click to watch videos which are given below.</p>
+                <div class="cyber-news">
+                    <!-- News articles will be injected here by JavaScript -->
+                </div>
+            </div>
+            <section id="home" class="content active">
+                <h1 align="center" class="section-title">Free Videos to enhance your career in Cybersecurity</h1></section>
+            <div class="bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 p-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div class="bg-black dark:bg-white p-4 rounded-lg cursor-pointer" onclick="playVideo('https://www.youtube.com/watch?v=vK4Mno4QYqk')">
+                    <img src="cybersecurityroadmap.png" height="600" width="400" alt="Video Thumbnail 1" class="rounded-lg mb-4">
+                    <h2 class="text-xl font-bold mb-2">How to become Cybersecurity Expert</h2>
+                    <p class="text-sm">This video will help you how to be a Professional Cybersecurity Expert.</p>
+                  </div>
+                  <div class="bg-black dark:bg-white p-4 rounded-lg cursor-pointer" onclick="playVideo('https://www.youtube.com/watch?v=Rgvzt0D8bR4&t=1578s')">
+                    <img src="ethicalhacking.png" height="900" width="400" alt="Video Thumbnail 2" class="rounded-lg mb-4">
+                    <h2 class="text-xl font-bold mb-2">Ethical Hacking full course / Complete Course</h2>
+                    <p class="text-sm">This video helps you to enter in the world of Cybersecurity with Ethical Hacking.</p>
+                  </div>
+                  <div class="bg-black dark:bg-white p-4 rounded-lg cursor-pointer" onclick="playVideo('https://www.youtube.com/watch?v=J8odohybOIM&t=3547s')">
+                    <img src="linuxcourse.png" height="600" width="400" alt="Video Thumbnail 3" class="rounded-lg mb-4">
+                    <h2 class="text-xl font-bold mb-2">LINUX Complete tutorial</h2>
+                    <p class="text-sm">This video helps you to be Master in LINUX Operating System.</p>
+                  </div>
+                </div>
+              </div>
+              <script>
+                function playVideo(url) {
+                  window.open(url, '_blank');
+                }
+              </script>
+        </section>
+        <section id="it-news" class="content">
+            <h1 align="center" class="section-title">IT News</h1>
+            <div class="section-content">
+                <p>Stay updated with the latest IT news and developments.
+                     From software updates to hardware innovations, we've got you covered.</p>
+            </div>
+        </section>
+        <section id="technology" class="content">
+            <h1 align="center" class="section-title">Technology</h1>
+            <div class="section-content">
+                <p>Discover the newest advancements in technology. From AI to IoT,
+                     explore the innovations shaping the future.</p>
+            </div>
+        </section>
+        <section id="international-news" class="content">
+            <h1 align="center" class="section-title">International News</h1>
+            <div class="section-content">
+                <p>Get the latest international news updates. From politics to global
+                     events, stay informed about what's happening around the world.</p>
+            </div>
+        </section>
+        <section id="about" class="content">
+            <h1 align="center" class="section-title">About Us</h1>
+            <div class="section-content">
+                <p><h1 align="center">Learn more about Cyberapt and our mission to provide the latest 
+                    news in cybersecurity, IT, and technology.</h1>
+            </div>
+            
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex flex-col md:flex-row items-center bg-white text-zinc-800 dark:bg-zinc-900 dark:text-white p-6">
+  <div class="md:w-1/3 mb-6 md:mb-0">
+    <img src="me.png" alt="Person Image" class="rounded-lg shadow-lg">
+  </div>
+  <div class="md:w-2/3 md:pl-6">
+    <h2 class="text-3xl font-bold mb-4">About Ashish Sapkota</h2>
+    <h3 class="text-xl font-semibold mb-4">Student of computer science, Engaged in the field of Cyber Security.</h3>
+    <p class="mb-4">Ashish Sapkota passed his secondary level schooling in 2023.</p>
+    <p class="mb-4">I started Cyberapt in 2024 as a place to share my knowledge with the world.</p>
+    
+
+
+  </div>
+</div>
+  </body>
+
+        </section>
+    </main>
+  
+        </form>
+      </div>
+    </h1>
+    <div class="bg-zinc-800 dark:bg-zinc-200 py-8 text-center">
+        <p>Give us a follow</p>
+        <div class="flex justify-center space-x-4 mt-4">
+            <a href="#"><img src="getintouchwith00.png" height="150" width="300" alt="Youtube"></a>
+        </div>
+        <p class="mt-4">Get in touch with us!</p>
+        <p class="mt-2">If you have other issues, send us an email at support@cyberapt.com</p>
+        <p class="mt-2">Terms & Conditions | Privacy Policy</p>
+        <p class="mt-2">Copyright © 2024 All rights reserved Cyberapt</p>
+    </div>
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.content');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const articles = [
+               
+            ];
+
+            const newsContainer = document.querySelector('.cyber-news');
+            articles.forEach(article => {
+                const articleElement = document.createElement('div');
+                articleElement.innerHTML = `<h2>${article.title}</h2><p>${article.content}</p>`;
+                newsContainer.appendChild(articleElement);
+            });
+        });
+    </script>
+</body>
+</html>
